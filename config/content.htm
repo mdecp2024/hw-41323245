@@ -39,7 +39,83 @@
 <h2>HW 1 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3>w10</h3>
+<h3>w11</h3>
+<p>1.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
+
+# 圓心座標 (5, 5)，半徑為 4
+center_x, center_y = 5, 5
+radius = 4
+
+# 創建一個 10x10 的空白區域
+for y in range(10):
+    for x in range(10):
+        # 計算當前點到圓心的距離
+        distance = math.sqrt((x - center_x)**2 + (y - center_y)**2)
+        
+        # 如果距離小於等於半徑，顯示星號，否則顯示空格
+        if distance &lt;= radius:
+            print("*", end="")
+        else:
+            print(" ", end="")
+    print()  # 換行
+</pre>
+<p>2.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每一格的 pixel 數
+gs = 20
+
+# gs * tc = canvas width and height
+ctx = canvas.getContext("2d")
+
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+def grid(width, height, grid_pix):
+    # x 方向共 width 格
+    # y 方向共 height 格
+    # grid_pix, 每一個的 pixel 點數
+    # 利用迴圈與座標增量繪圖
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x - 1, y - 1, gs, gs)
+
+# 繪製圓形
+def draw_circle(center_x, center_y, radius):
+    for i in range(10):
+        for j in range(10):
+            # 計算格子中心位置
+            grid_center_x = (i * gs) + gs / 2
+            grid_center_y = (j * gs) + gs / 2
+            # 計算該格子中心到圓心的距離
+            distance = math.sqrt((grid_center_x - center_x) ** 2 + (grid_center_y - center_y) ** 2)
+            # 如果該格子在圓內，則填充顏色
+            if distance &lt;= radius:
+                fill(i * gs, j * gs, "black")
+
+# 顯示格線
+grid(10, 10, gs)
+
+# 圓心為 (5, 5) 位置，半徑為 4 格
+draw_circle(5 * gs, 5 * gs, 4 * gs)
+</pre>
+<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/M6m4U0z3hoc" width="560"></iframe></p><h3>w10</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/lTkb7nJpxKQ" width="560"></iframe></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/7GhS1GmQqYc" width="560"></iframe></p>
 <p></p>
