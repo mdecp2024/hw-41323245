@@ -39,7 +39,46 @@
 <h2>HW 1 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3>w11</h3>
+<h3>w13_hw</h3>
+<p>12/4</p>
+<p></p>
+<p>(1)</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width = 400,height = 400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每一格的 pixel 數
+gs = 200
+
+# gs*tc = canvas width and height
+
+ctx = canvas.getContext("2d")
+
+width=1
+height=1
+
+for i in range(width):
+for j in range(height):
+#dRect(i*gs, j*gs, gs, gs, 1, "lightgrey")
+ctx.lineWidth=1
+ctx.strokeStyle='red'
+ctx.beginPath();
+ctx.rect(i*gs,j*gs,gs,gs)
+ctx.stroke();
+
+for i in range(width):
+for j in range(height):
+#dRect(i*gs, j*gs, gs, gs, 1, "lightgrey")
+ctx.lineWidth=1
+ctx.strokeStyle='red'
+ctx.beginPath();
+ctx.rect(i*gs+50,j*gs+50,gs,gs)
+ctx.stroke();</pre>
+<p></p><h3>w11_hw</h3>
 <p>1.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
 
@@ -119,7 +158,8 @@ draw_circle(5 * gs, 5 * gs, 4 * gs)
 <p>11/27</p>
 <p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/0f0f7eeea5854aedd0a8018781bbc6d8ae0c982e/w112.py">數列</a></p>
 <p></p>
-<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/8d61ce1baed01c8e0ebcd0ef7cd7726013e7f77d/w11.py">格子練習</a></p><h3>w10</h3>
+<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/8d61ce1baed01c8e0ebcd0ef7cd7726013e7f77d/w11.py">格子練習</a></p>
+<h3>w10</h3>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/lTkb7nJpxKQ" width="560"></iframe></p>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/7GhS1GmQqYc" width="560"></iframe></p>
 <p></p>
@@ -133,7 +173,8 @@ draw_circle(5 * gs, 5 * gs, 4 * gs)
 </ul>
 <p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/TQkuS5TkBPA" width="560"></iframe></p>
 <p><span>我學習到了如何更迅速的利用 Python 程式解決物理與微積分的問題，我覺得這可以解決許多人在計算方面上的困難。</span></p>
-<p></p><h3>w7</h3>
+<p></p>
+<h3>w7</h3>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/-XElCCAFaug?si=DYFDdcWS7vcoPQol" title="YouTube video player" width="560"></iframe></p>
 <h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
