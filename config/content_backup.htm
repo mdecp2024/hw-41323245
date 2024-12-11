@@ -39,7 +39,7 @@
 <h2>HW 1 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3>w13</h3>
+<h3>w14_ex</h3><h3>w13</h3>
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
 <p>
@@ -182,10 +182,11 @@ ctx.moveTo(60, 60)
 ctx.lineTo(360, 360)
 ctx.stroke()
 </script>
-</p><h3>w13_hw</h3>
+</p>
+<p>藉由這次的畫圖填色，我學會了如何應用瀏覽器畫圖，真是讓我受益良多。</p><h3>w13_hw</h3>
 <p>12/4</p>
 <p></p>
-<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/b7fd880a62aa711cce485233e25c2ad4801a6c7e/w13.py2">(1)</a></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/b7fd880a62aa711cce485233e25c2ad4801a6c7e/w13.py2">(1)</a> 兩個正方形重疊</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 
@@ -222,7 +223,7 @@ ctx.beginPath();
 ctx.rect(i*gs+50,j*gs+50,gs,gs)
 ctx.stroke();</pre>
 <p></p>
-<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/c51019712084a2972ebbd5a0cae99ae0146acdf9/w13.py">(2)</a></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/c51019712084a2972ebbd5a0cae99ae0146acdf9/w13.py">(2)</a> <span>一個正方形</span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 
@@ -250,7 +251,7 @@ for i in range(width):
      ctx.rect(i*gs,j*gs,gs,gs)
      ctx.stroke();</pre>
 <p></p>
-<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/e843f331f982c8d36a66a87f13a9c6120fe390b9/w13.py3">(3)</a></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/e843f331f982c8d36a66a87f13a9c6120fe390b9/w13.py3">(3)</a> <span>兩個紅色正方形加黑色圓型重疊</span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html, document as doc, window
  
 # Create canvas element
