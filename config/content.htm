@@ -39,7 +39,18 @@
 <h2>HW 1 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3>w14_ex</h3>
+<h3>w15</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 輸入起始數字和結束數字
+start = int(input("請輸入起始數字: "))  # 用戶輸入起始數字
+end = int(input("請輸入結束數字: "))    # 用戶輸入結束數字
+
+# 使用內建的 sum 和 range 函數來計算累加和
+total = sum(range(start, end + 1))
+
+# 顯示結果
+print(f"從 {start} 累加到 {end} 的總和是: {total}")
+</pre>
+<p></p><h3>w14_ex</h3>
 <p>12/11</p>
 <p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/a22e75dbca5e58c0f4144ed418a6fb13b027298e/w14_ex">三個圓型隨機產生顏色</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
@@ -152,7 +163,8 @@ x3, y3, r3 = 200, 100, 100  # 圓3：圓心 (200, 100)，半徑 100
 # 呼叫畫圓函式，並繪製三個圓
 draw_circles(x1, y1, r1, x2, y2, r2, x3, y3, r3)
 </pre>
-<p></p><h3>w13</h3>
+<p></p>
+<h3>w13</h3>
 <div id="brython_div1"></div>
 <!-- 導入 brython 程式庫 -->
 <p>
@@ -296,7 +308,8 @@ ctx.lineTo(360, 360)
 ctx.stroke()
 </script>
 </p>
-<p>藉由這次的畫圖填色，我學會了如何應用瀏覽器畫圖，真是讓我受益良多。</p><h3>w13_hw</h3>
+<p>藉由這次的畫圖填色，我學會了如何應用瀏覽器畫圖，真是讓我受益良多。</p>
+<h3>w13_hw</h3>
 <p>12/4</p>
 <p></p>
 <p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/239340e3b45f730a5a584f758d98054b/raw/b7fd880a62aa711cce485233e25c2ad4801a6c7e/w13.py2">(1)</a> 兩個正方形重疊</p>
@@ -454,7 +467,8 @@ def draw_circle(event):
 # Attach actions to context menu buttons
 context_menu.children[0].bind("click", clear_canvas)  # First button: Clear canvas
 context_menu.children[1].bind("click", draw_circle)  # Second button: Draw a circle</pre>
-<p></p><h3>w11_hw</h3>
+<p></p>
+<h3>w11_hw</h3>
 <p>1.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
 
