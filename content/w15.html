@@ -142,7 +142,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">HW 1 Exam << <a href='HW 1 Exam.html'>Previous</a> <a href='w14_ex.html'>Next</a> >> w14_ex<br /><h1>w15</h1>
-<p>題目一</p>
+<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/a703e6af096a6f0a75d055ca301aa82424e8e8ad/w15">題目一</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 輸入起始數字和結束數字
 start = int(input("請輸入起始數字: "))  # 用戶輸入起始數字
 end = int(input("請輸入結束數字: "))    # 用戶輸入結束數字
@@ -154,7 +154,7 @@ total = sum(range(start, end + 1))
 print(f"從 {start} 累加到 {end} 的總和是: {total}")
 </pre>
 <p></p>
-<p>題目二</p>
+<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/091b24d3b88185e4353a38a080cbb9f5c25ab9c2/w15.1">題目二</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義 addto 函數，接受兩個參數 start 和 end
 def addto(start, end):
     return sum(range(start, end + 1))  # 使用 sum 和 range 函數來計算累加和
@@ -164,7 +164,45 @@ result = addto(1, 100)
 
 # 顯示結果
 print(f"從 1 累加到 100 的總和是: {result}")</pre>
-<p></p><br />HW 1 Exam << <a href='HW 1 Exam.html'>Previous</a> <a href='w14_ex.html'>Next</a> >> w14_ex</div>
+<p></p>
+<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/c588574d8d0fef0a5083f802cd509d8caefbf9f3/w15.2">題目三</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義 addto 函式
+def addto(init, upto):
+    # 初始化 sum 為 0
+    sum = 0
+    # 利用 for 迴圈進行累加
+    for i in range(init, upto + 1):
+        if i % 2 == 0:  # 判斷 i 是否為偶數
+            sum = sum + i
+    return sum
+ 
+# 主程式
+init = 1
+upto = 100
+# 呼叫 addto 函式
+result = addto(init, upto)
+print("從" + str(init) + "累加到" + str(upto) + "的偶數和=" + str(result))
+</pre>
+<p></p>
+<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/84f5397e3d4811f9b3f8e21863ebcd98a858061d/w15.3">題目四</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義 addto 函式
+def addto(init, upto):
+    # 初始化 sum 為 0
+    sum = 0
+    # 利用 for 迴圈進行累加
+    for i in range(init, upto + 1):
+        if i % 10 == 8:  # 檢查數字尾數是否為 8
+            sum = sum + i
+    return sum
+ 
+# 主程式
+init = 1
+upto = 100
+# 呼叫 addto 函式
+result = addto(init, upto)
+print("從" + str(init) + "累加到" + str(upto) + "，只加尾數為8的數=" + str(result))
+</pre>
+<p><br/><br/></p><br />HW 1 Exam << <a href='HW 1 Exam.html'>Previous</a> <a href='w14_ex.html'>Next</a> >> w14_ex</div>
         
     <!-- footer -->
       <div class="container">
