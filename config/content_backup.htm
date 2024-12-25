@@ -82,7 +82,7 @@ result = addto(init, upto)
 print("從" + str(init) + "累加到" + str(upto) + "的偶數和=" + str(result))
 </pre>
 <p></p>
-<p>題目四</p>
+<p><a href="https://mdecp2024.github.io/hw-41323245/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/84f5397e3d4811f9b3f8e21863ebcd98a858061d/w15.3">題目四</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義 addto 函式
 def addto(init, upto):
     # 初始化 sum 為 0
@@ -100,7 +100,8 @@ upto = 100
 result = addto(init, upto)
 print("從" + str(init) + "累加到" + str(upto) + "，只加尾數為8的數=" + str(result))
 </pre>
-<p><br/><br/></p><h3>w14_ex</h3>
+<p><br/><br/></p>
+<h3>w14_ex</h3>
 <p>12/11</p>
 <p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/41323245/79761b0dbe31019aa982bf3f9613ff17/raw/a22e75dbca5e58c0f4144ed418a6fb13b027298e/w14_ex">三個圓型隨機產生顏色</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
@@ -626,12 +627,101 @@ draw_circle(5 * gs, 5 * gs, 4 * gs)
 <p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
 <h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
-<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 3</h1>
+<p><br/>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<br/><br/><br/>w16_exam1<h3>w16_exam1</h3>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
+import math
+
+# 初始化 HTML，確保 canvas 元素存在
+def setup_canvas():
+    if not document.querySelector("#my_canvas"):
+        canvas = html.CANVAS(id="my_canvas", width=800, height=600)
+        document &lt;= canvas
+
+setup_canvas()
+
+# 設定畫布
+canvas = document["my_canvas"]
+ctx = canvas.getContext("2d")
+
+# 設定原點
+origin_x, origin_y = 32, 45    
+
+# 繪製 X 軸
+ctx.beginPath()
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(500, origin_y)
+ctx.strokeStyle = "black"
+ctx.lineWidth = 2
+ctx.stroke()
+
+# 繪製 Y 軸
+ctx.beginPath()
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(origin_x, 300)
+ctx.stroke()
+
+# 標註原點
+ctx.font = "12px Arial"
+ctx.fillStyle = "black"
+ctx.fillText("(32, 45)", origin_x + 5, origin_y - 5)
+
+# 六邊形
+hex_x, hex_y = 100, 100
+ctx.beginPath()
+for i in range(6):
+    angle = i * (2 * math.pi / 6)
+    x = hex_x + 30 * math.cos(angle)
+    y = hex_y + 30 * math.sin(angle)
+    if i == 0:
+        ctx.moveTo(x, y)
+    else:
+        ctx.lineTo(x, y)
+ctx.closePath()
+ctx.fillStyle = "DarkOrange"
+ctx.fill()
+
+# 菱形
+ctx.beginPath()
+ctx.moveTo(160, 70)
+ctx.lineTo(180, 100)
+ctx.lineTo(160, 130)
+ctx.lineTo(140, 100)
+ctx.closePath()
+ctx.fillStyle = "DarkCyan"
+ctx.fill()
+
+# 三角形
+ctx.beginPath()
+ctx.moveTo(165, 130)
+ctx.lineTo(205, 130)
+ctx.lineTo(185, 100)
+ctx.closePath()
+ctx.fillStyle = "DodgerBlue"
+ctx.fill()
+
+# 圓形
+ctx.beginPath()
+ctx.arc(230, 100, 30, 0, 2 * math.pi)
+ctx.fillStyle = "MediumVioletRed"
+ctx.fill()
+
+# 正方形
+ctx.beginPath()
+ctx.rect(265, 75, 50, 50)
+ctx.fillStyle = "Khaki"
+ctx.fill()
+
+# 長方形
+ctx.beginPath()
+ctx.rect(320, 90, 60, 20)
+ctx.fillStyle = "Navy"
+ctx.fill()
+</pre>
+<p></p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
-<p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
-<h2>HW 3 Exam</h2>
+<p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p><h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>HW 4</h1>

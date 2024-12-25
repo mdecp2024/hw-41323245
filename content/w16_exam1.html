@@ -2,7 +2,7 @@
         <head>
         <title>cp_hw</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
@@ -141,10 +141,100 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW 1 << <a href='HW 1.html'>Previous</a> <a href='w15.html'>Next</a> >> w15<br /><h1>HW 1 Exam</h1>
-<p>每六人為一組進行協同程式練習</p>
-<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 Topic 1 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<br />HW 1 << <a href='HW 1.html'>Previous</a> <a href='w15.html'>Next</a> >> w15</div>
+    <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w16_exam1</h1>
+<p></p>
+<p><a href="/get_page/Brython?src=https://gist.githubusercontent.com/41323245/0a1630a73b863e40343e5f72ab59ecc0/raw/f786c3b79d1226dc7f4f25ea8ed24cd5049274ee/w16%2520%25201">Exam2</a></p>
+<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
+import math
+
+# 初始化 HTML，確保 canvas 元素存在
+def setup_canvas():
+    if not document.querySelector("#my_canvas"):
+        canvas = html.CANVAS(id="my_canvas", width=800, height=600)
+        document &lt;= canvas
+
+setup_canvas()
+
+# 設定畫布
+canvas = document["my_canvas"]
+ctx = canvas.getContext("2d")
+
+# 設定原點
+origin_x, origin_y = 32, 45    
+
+# 繪製 X 軸
+ctx.beginPath()
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(500, origin_y)
+ctx.strokeStyle = "black"
+ctx.lineWidth = 2
+ctx.stroke()
+
+# 繪製 Y 軸
+ctx.beginPath()
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(origin_x, 300)
+ctx.stroke()
+
+# 標註原點
+ctx.font = "12px Arial"
+ctx.fillStyle = "black"
+ctx.fillText("(32, 45)", origin_x + 5, origin_y - 5)
+
+# 六邊形
+hex_x, hex_y = 100, 100
+ctx.beginPath()
+for i in range(6):
+    angle = i * (2 * math.pi / 6)
+    x = hex_x + 30 * math.cos(angle)
+    y = hex_y + 30 * math.sin(angle)
+    if i == 0:
+        ctx.moveTo(x, y)
+    else:
+        ctx.lineTo(x, y)
+ctx.closePath()
+ctx.fillStyle = "DarkOrange"
+ctx.fill()
+
+# 菱形
+ctx.beginPath()
+ctx.moveTo(160, 70)
+ctx.lineTo(180, 100)
+ctx.lineTo(160, 130)
+ctx.lineTo(140, 100)
+ctx.closePath()
+ctx.fillStyle = "DarkCyan"
+ctx.fill()
+
+# 三角形
+ctx.beginPath()
+ctx.moveTo(165, 130)
+ctx.lineTo(205, 130)
+ctx.lineTo(185, 100)
+ctx.closePath()
+ctx.fillStyle = "DodgerBlue"
+ctx.fill()
+
+# 圓形
+ctx.beginPath()
+ctx.arc(230, 100, 30, 0, 2 * math.pi)
+ctx.fillStyle = "MediumVioletRed"
+ctx.fill()
+
+# 正方形
+ctx.beginPath()
+ctx.rect(265, 75, 50, 50)
+ctx.fillStyle = "Khaki"
+ctx.fill()
+
+# 長方形
+ctx.beginPath()
+ctx.rect(320, 90, 60, 20)
+ctx.fillStyle = "Navy"
+ctx.fill()
+</pre>
+<p></p><br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
         
     <!-- footer -->
       <div class="container">
