@@ -519,7 +519,268 @@ def draw_circle(event):
 context_menu.children[0].bind("click", clear_canvas)  # First button: Clear canvas
 context_menu.children[1].bind("click", draw_circle)  # Second button: Draw a circle</pre>
 <p></p>
-<h3>w11_hw</h3>
+<h3>w12_hw</h3>
+<p><span>input()程式範例</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("What's your name? ")  # 提示使用者輸入名字
+print(f"My name is , {name}!")            # 使用 f-string 輸出打招呼的訊息
+input("What's your name?")</pre>
+<p><span>print()程式範例</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print ("   /\_/\   ")
+print (" &gt;^.^&lt;   ")
+print ("    / \    ")
+print ("   (___)___")</pre>
+<p><span>範例程式:名字<br/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">first_name = "liu" #變數first_name為"自己的姓"
+last_name  = "hsun" #變數last_name為"自己的名"
+print (first_name) #列印變數first_name
+print (last_name) #列印變數last_name</pre>
+<p><span>範例程式:名字+最愛的食物<br/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("What's your name?") #變數name為input所輸入之文字
+favorite_food = input ("What is your favorite food?") #變數favorite_food為input所輸入之文字
+print ("Hi! My name is " + name) #列印"Hi! My name is "(這段為文字) + name(name這個變數的數值)
+print ("My favorite food is " + favorite_food)  #列印"My favorite food is "(這段為文字) + favorite_food(favorite_food這個變數的數值)
+print (name + "'s favorite food is " + favorite_food) #列印name (數值)+ 's favorite food is (此段為文字)+favorite_food(數值)
+</pre>
+<p><span>範例程式:if<br/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">programming_books = ["Learn python", "Python for all",  "Intro to python"]
+print (programming_books)
+wanted_book = input("Hi! What book would you like to buy?")
+print (wanted_book)
+if wanted_book in programming_books:
+    print ("Yes, we sell it!")
+else:
+    print ("Sorry, we don't sell that book")</pre>
+<p><span>範例程式:購物清單</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">shopping_list = ["carrots", "chocolate", "olives"] #在shopping_list變數裡面有3個字串
+print (shopping_list) #列印shopping_list變數
+new_item = input("What else do I have to buy?") #設定一個變數為new_item其等於input指令回傳之數值
+  
+if new_item in shopping_list:  #如果 "變數new_item(想買的物品)"回傳之值 在"shopping_list(購物清單)"字串當中就執行以下程式
+    print (new_item + " is/are already in the shopping list") #列印 "new_item變數的數值"+字串is/are already in the shopping list
+    print (shopping_list) #列印shopping_list字串
+else:                    #反之
+    shopping_list.append(new_item) #購物清單.加入(想要購買的物品)    如果不在購物清單內那就將未在字串中物品加入購物清單
+    print (shopping_list) #列印購物清單
+#以下是移除物品的程式
+item_to_remove = input("What do I have to remove?") #item_to_remove(想要移除的物品)
+  
+if item_to_remove in shopping_list: #如果 想要移除的物品在購物清單中 那就執行
+    shopping_list.remove(item_to_remove) #把購物清單.移除(想要移除的物品)
+    print (shopping_list) #列印購物清單
+else:                     #反之
+    print (item_to_remove + " is/are not in the list") #列印 想要移除的物品+is/are not in the list(不在清單中)
+    print (shopping_list) #列印購物清單</pre>
+<p><span>範例程式:menu</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu = ["burger", "salad", "coke"] #todays_menu變數=今天菜單["burger", "salad", "coke"
+side_dish_index = todays_menu.index("salad") #side_dish_index變數 = 今日菜單.找出"沙拉"位於字串中第幾個
+print (side_dish_index) #列印side_dish_index  列印他在第幾位
+todays_menu.pop(side_dish_index) #今日菜單.移除字串中的元素(side_dish_index變數"沙拉")  這裡意思是移除沙拉
+print (todays_menu) #列印今日菜單
+todays_menu.insert(side_dish_index, "fries") #今日菜單.在字串中插入(side_dish_index, "fries")   這裡意思是加入薯條
+print (todays_menu) #列印今日菜單</pre>
+<p><span>範例程式:城市</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義一個名為 cities 的串列，包含五個城市名稱
+cities = ["San Diego", "Prague", "Cape Town", "Tokyo", "Melbourne"]
+   
+# 列印整個串列
+print (cities)  # ['San Diego', 'Prague', 'Cape Town', 'Tokyo', 'Melbourne']
+   
+# 列印索引為 1 的元素
+print (cities[1])  # 'Prague'
+   
+# 列印從索引 1 到 3 的元素（不包含索引 4）
+print (cities[1:4])  # ['Prague', 'Cape Town', 'Tokyo']
+   
+# 列印從索引 1 到 3 的元素，間隔為 2
+print (cities[1:4:2])  # ['Prague', 'Tokyo']
+   
+# 列印從索引 0 到 2 的元素（不包含索引 3）
+print (cities[0:3])  # ['San Diego', 'Prague', 'Cape Town']
+   
+# 列印從開始到索引 2 的元素（不包含索引 3）
+print (cities[:3])  # ['San Diego', 'Prague', 'Cape Town']
+   
+# 列印從索引 2 到 4 的元素（不包含索引 5）
+print (cities[2:5])  # ['Cape Town', 'Tokyo', 'Melbourne']
+   
+# 列印從索引 2 到最後的元素
+print (cities[2:])  # ['Cape Town', 'Tokyo', 'Melbourne']
+   
+# 列印從索引 0 到 4 的元素，每隔 2 個元素
+print (cities[0:5:2])  # ['San Diego', 'Cape Town', 'Melbourne']
+   
+# 列印從頭到尾的元素，每隔 2 個元素
+print (cities[::2])  # ['San Diego', 'Cape Town', 'Melbourne']
+   
+# 列印索引為 4 的元素
+print (cities[4])  # 'Melbourne'
+   
+# 列印最後一個元素（索引 -1）
+print (cities[-1])  # 'Melbourne'
+   
+# 列印從索引 -4 到 -2 的元素（不包含索引 -1）
+print (cities[-4:-1])  # ['Prague', 'Cape Town', 'Tokyo']
+   
+# 列印從索引 3 到 1，反向取值
+print (cities[3:0:-1])  # ['Tokyo', 'Cape Town', 'Prague']
+   
+# 列印從索引 -2 到 -4，反向取值
+print (cities[-2:-5:-1])  # ['Tokyo', 'Cape Town', 'Prague']
+   
+# 列印整個串列，反轉順序
+print (cities[::-1])  # ['Melbourne', 'Tokyo', 'Cape Town', 'Prague', 'San Diego']</pre>
+<p><span>範例程式:感官</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義一個包含五種感官的清單
+senses = ["eyes", "nose", "ears", "tongue", "skin"]
+print(senses)  # 輸出原始的感官清單
+   
+# 將清單中索引為1的元素從 "nose" 改為 "smell"
+senses[1] = "smell"
+print(senses)  # 輸出更新後的感官清單
+   
+# 將索引範圍為3到5的元素（"tongue", "skin"）改為 ["taste", "touch"]
+senses[3:5] = ["taste", "touch"]
+print(senses)  # 輸出更新後的感官清單
+   
+# 將索引範圍從0到3，步長為2的元素（"eyes", "ears"）改為 ["sight", "hearing"]
+senses[0:3:2] = ["sight", "hearing"]
+print(senses)  # 輸出最終更新後的感官清單</pre>
+<p><span>範例程式:行星</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義一個行星列表
+planets = ["Mercury", "Mars", "Earth", "Neptune"]
+# 輸出原始行星列表
+print(planets)
+   
+# 將 "Jupiter" 加入列表的末尾
+planets = planets + ["Jupiter"]
+# 輸出更新後的行星列表
+print(planets)
+   
+# 在索引 2 前插入 "Venus"
+# 先取出索引 0 到 1 的元素，然後加上 "Venus" 和索引 2 到 4 的元素
+planets = planets[0:2] + ["Venus"] + planets[2:5]
+# 輸出再次更新的行星列表
+print(planets)
+   
+# 在索引 5 位置後插入 "Uranus" 和 "Saturn"
+# 取出索引 0 到 4 的元素，加上新元素，然後加上索引 5 之後的元素
+planets = planets[:5] + ["Uranus", "Saturn"] + planets[5:]
+# 輸出最終的行星列表
+print(planets)</pre>
+<p><span>範例程式:房子</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">house = ["kitchen", "dining room", "living room", "bedroom", "bathoom", "garden", "balcony", "terrace"]
+print(house)  # 原始列表
+   
+# 刪除 "dining room"
+del house[1]
+print(house)  # ["kitchen", "living room", "bedroom", "bathoom", "garden", "balcony", "terrace"]
+   
+# 刪除 "garden" 和 "balcony"
+del house[4:6]
+print(house)  # ["kitchen", "living room", "bedroom", "bathoom", "terrace"]
+   
+# 刪除 "kitchen", "bedroom", 和 "terrace"
+del house[::2]
+print(house)  # ["living room", "bathoom"]
+   
+# 刪除整個清單
+del house
+try:
+    print(house)  # 此處會觸發 NameError
+except NameError:
+    print("The variable 'house' no longer exists.")</pre>
+<p><span>範例程式:我朋友最喜歡的蔡</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義朋友的名字列表
+friends = ["Geetha", "Luca", "Daisy", "Juhan"]  
+   
+# 定義喜愛的食物列表
+dishes  = ["sushi", "burgers", "tacos", "pizza"]  
+   
+# 打印朋友的名字
+print("My friends' names are:")  
+print(friends)  
+   
+# 使用 for 迴圈遍歷朋友列表，打印索引和對應的朋友名字
+for index in range(0, 4):  
+    print("index:  " + str(index))  # 打印當前索引
+    print("friend: " + friends[index])  # 打印對應的朋友名字
+   
+# 打印喜愛的食物
+print("Their favorite dishes are:")  
+print(dishes)  
+   
+# 使用 for 迴圈遍歷食物列表，打印索引和對應的食物
+for index in range(0, 4):  
+    print("index:  " + str(index))  # 打印當前索引
+    print("dish: " + dishes[index])  # 打印對應的食物
+   
+# 使用 for 迴圈，同時列出朋友和他們喜愛的食物
+for index in range(0, 4):  
+    print("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</pre>
+<p><span>範例程式:動物</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 動物清單
+animals = ["giraffe", "penguin", "dolphin"]
+print(animals)  # 輸出清單
+   
+# 針對清單中的每個位置進行操作
+for i in range(0, len(animals)):  # 使用 len() 動態取得清單長度
+    print("-- Beginning of loop --")
+    # 輸出每個元素及其位置
+    print("The element in position " + str(i) + " is " + animals[i])
+   
+# 想要看到的動物
+wanted_to_see = "penguin"
+   
+# 針對清單中的每個位置進行操作
+for i in range(0, len(animals)):
+    # 如果當前的動物是想看的那個
+    if animals[i] == wanted_to_see:
+        # 輸出特別訊息
+        print("I saw a " + animals[i] + " and I really wanted to see it!")
+    # 如果當前的動物不是特別想看的那個
+    else:
+        # 輸出一般訊息
+        print("I saw a " + animals[i])</pre>
+<p><span>範例程式:物品位置</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">accessories = ["belt", "hat", "gloves", "sunglasses", "ring"]
+print(accessories)
+   
+# 逐一列出元素及其位置
+for i in range(len(accessories)):
+    print(f"The element {accessories[i]} is in position {i}")
+   
+# 列出長度等於 6 的元素
+for i in range(len(accessories)):
+    if len(accessories[i]) == 6:
+        print(f"The element {accessories[i]} is in position {i} and it has 6 characters")
+   
+# 列出長度小於 6 的元素
+for i in range(len(accessories)):
+    if len(accessories[i]) &lt; 6:
+        print(f"The element {accessories[i]} is in position {i} and it has less than 6 characters")
+   
+# 定義閾值：6，列出長度大於 6 的元素
+n_of_characters = 6
+for i in range(len(accessories)):
+    if len(accessories[i]) &gt; n_of_characters:
+        print(f"The element {accessories[i]} is in position {i} and it has more than {n_of_characters} characters")
+   
+# 定義閾值：6，列出長度不等於 6 的元素
+for i in range(len(accessories)):
+    if len(accessories[i]) != n_of_characters:
+        print(f"The element {accessories[i]} is in position {i} and it has a number of characters different from {n_of_characters}")
+   
+# 定義閾值：2，列出位置小於或等於 2 的元素
+position = 2
+for i in range(len(accessories)):
+    if i &lt;= position:
+        print(f"The element {accessories[i]} is in position {i}, which is less than or equal to {position}")
+   
+# 定義閾值：2，列出位置大於或等於 2 的元素
+for i in range(len(accessories)):
+    if i &gt;= position:
+        print(f"The element {accessories[i]} is in position {i}, which is at least {position}")</pre>
+<p><br/><br/><span></span></p><h3>w11_hw</h3>
 <p>1.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import math
 
@@ -737,7 +998,8 @@ ctx.rect(320, 90, 60, 20)
 ctx.fillStyle = "Navy"
 ctx.fill()
 </script>
-</p><h1>HW 3</h1>
+</p>
+<h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
@@ -861,7 +1123,8 @@ if __name__ == "__main__":
     ctx, offset_x, offset_y = draw_maze(maze_angle)
     label_coordinate(ctx, offset_x, offset_y, text_angle)
 </script>
-</p><h1>HW 4</h1>
+</p>
+<h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
@@ -1047,7 +1310,8 @@ if __name__ == "__main__":
     draw_path(ctx, offset_x, offset_y, maze_angle, path, pixel_scale)
     label_coordinate(ctx, offset_x, offset_y, text_angle)
 </script>
-</p><h1>Final Report</h1>
+</p>
+<h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
